@@ -99,7 +99,19 @@ def substring_end_search(input_string):
 
 # Program 4. Find all dictionary words that have the provided letters in the provided order.
 def letters_in_order(input_string):
+    # counter for the number of words found
+    i = 0
+    # checks to see if input letters exist in order in the dictionary words.
+    for word in raw_words:
+        if all(x in word for x in input_string):
+            letters_index = [word.index(x) for x in input_string]
+            if letters_index == sorted(letters_index):
+                print(f"{word}")
+                i+=1
+    # returns final count and confirmation.
+    print(f"\n{i} words were found that have all the letters of {input_string} in order.\n")
     return 0
+
 
 ##############################################################################################################################
 
@@ -116,7 +128,7 @@ def letters_out_of_order(input_string):
             print (f"{word}")
             i+=1
     # returns final count and confirmation.
-    print(f"\n{i} words were found that have the letters {input_letters}.\n")
+    print(f"\n{i} words were found that have all the letters: {input_string}.\n")
     return 0
 
 ##############################################################################################################################
