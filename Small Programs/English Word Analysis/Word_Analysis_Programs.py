@@ -1,7 +1,3 @@
-# This program gives a choice of different operations that can be performed against a list of all English words.
-# It can work with the provided dictionary, or any other list of words separated by newlines.
-# All loops have an & condition to remove possessives.
-
 # Opens the dictionary. Insert your dictionary path here.
 dictionary = open(r"c:/MyCode/Small Programs/English Word Analysis/all_eng_word.txt", "r")
 
@@ -53,9 +49,8 @@ while (True):
 def substring_full_search(input_string):
 # counter for the number of words found
     i = 0
-    # matches provided string against each dictionary word, checking if "letters" exists in "word".
+    # matches provided string against each dictionary word, checking if "input_string" exists in "word".
     for word in raw_words:
-
         if  input_string in word and word[-2:] != "'s":
             print (f"{word}")
             i+=1
@@ -71,7 +66,7 @@ def substring_start_search(input_string):
     # counter for the number of words found
     i = 0
     
-    # matches provided string against each dictionary word, checking if "letters" is the end of "word".
+    # matches provided string against each dictionary word, checking if "input_string" is the start of "word".
     for word in raw_words:
         #the point in which we are checking the input_string
         if  input_string == word[0:len(input_string)] and word[-2:] != "'s":
@@ -89,7 +84,7 @@ def substring_end_search(input_string):
     # counter for the number of words found
     i = 0
     
-    # matches provided string against each dictionary word, checking if "letters" is the end of "word".
+    # matches provided string against each dictionary word, checking if "input_string" is the end of "word".
     for word in raw_words:
         #the point in which we are checking the input_string
         matchpoint = len(word) - len(input_string)
@@ -111,6 +106,17 @@ def letters_in_order(input_string):
 # Program 5. Finds all dictionary words that have the provided letters, in any order.
 
 def letters_out_of_order(input_string):
+    # counter for the number of words found
+    i = 0
+    input_letters = list(set(input_string))
+    # breaks word down into letters, and return dictionary words that have all of the provided letters.
+    for word in raw_words:
+        word_letters = list(set(word))
+        if  all(x in word_letters for x in input_letters):
+            print (f"{word}")
+            i+=1
+    # returns final count and confirmation.
+    print(f"\n{i} words were found that have the letters {input_letters}.\n")
     return 0
 
 ##############################################################################################################################
@@ -118,6 +124,15 @@ def letters_out_of_order(input_string):
 # Program 6. Finds all dictionary words contained in the string you provided.
 
 def superstring(input_string):
+    # counter for the number of words found
+    i = 0
+    # matches provided dictionary words against provided string, checking if "word" exists in "input_string".
+    for word in raw_words:
+        if  word in input_string and word[-2:] != "'s" and word != input_string:
+            print (f"{word}")
+            i+=1
+    # returns final count and confirmation.
+    print(f"\n{i} words were found inside {input_string}.\n")
     return 0
 
 ##############################################################################################################################
