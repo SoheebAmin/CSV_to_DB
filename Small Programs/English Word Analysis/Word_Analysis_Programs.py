@@ -1,0 +1,137 @@
+# This program gives a choice of different operations that can be performed against a list of all English words.
+# It can work with the provided dictionary, or any other list of words separated by newlines.
+# All loops have an & condition to remove possessives.
+
+# Opens the dictionary. Insert your dictionary path here.
+dictionary = open(r"c:/MyCode/Small Programs/English Word Analysis/all_eng_word.txt", "r")
+
+# stips newlines and places only the words in a new list.
+raw_words = []
+for word in dictionary.readlines():
+    word = word.strip()
+    raw_words.append(word)
+
+
+# provides the list of possible choices of programs.
+while (True):
+    print("""
+    Choose which dictionary analysis program to run:\n
+    1. Substring Full Search: Finds all dictionary words that have your substring in them.\n
+    2. Substring Start Search: Finds all dictionary words that start with your substring. \n
+    3. Substring End Search: Finds all dictionary words that end with your substring. \n
+    4. Letters in Order: Find all dictionary words that have the provided letters in the provided order. \n
+    5. Letters out of Order: Finds all dictionary words that have the provided letters, in any order. \n
+    6. Super String: Finds all dictionary words contained in the string you provided. \n 
+    """)
+    print("Which Program would you like to run? Please enter the number: ", end = "")
+    try:
+        program_choice = int(input())
+    except ValueError:
+        print("Please enter a number")
+        continue
+    # confirms compliance, else re-prompts.
+    if program_choice < 1 or program_choice > 6:
+        print("Sorry, please pick a number from the program list")
+        continue
+    else:
+        break
+    
+# asks for text, while confirming it is only alphabetical, or else re-prompts.
+while (True):    
+    print ("Please provide your text: ", end = "")
+    input_string= input()
+    if input_string.isalpha() == False:
+        print("Please use only letters")
+        continue
+    else:
+        break
+
+##############################################################################################################################
+
+# Program 1. Substring Full Search: Finds all dictionary words that have your substring in them.
+
+def substring_full_search(input_string):
+# counter for the number of words found
+    i = 0
+    # matches provided string against each dictionary word, checking if "letters" exists in "word".
+    for word in raw_words:
+
+        if  input_string in word and word[-2:] != "'s":
+            print (f"{word}")
+            i+=1
+    # returns final count and confirmation.
+    print(f"\n{i} words were found with {input_string} as a substring.\n")
+    return 0
+
+##############################################################################################################################
+
+#Program 2. Finds all dictionary words that start with your substring.
+
+def substring_start_search(input_string):
+    # counter for the number of words found
+    i = 0
+    
+    # matches provided string against each dictionary word, checking if "letters" is the end of "word".
+    for word in raw_words:
+        #the point in which we are checking the input_string
+        if  input_string == word[0:len(input_string)] and word[-2:] != "'s":
+            i+=1
+            print (f"{word}")
+    # returns final count and confirmation.
+    print(f"\n{i} words were found that start with {input_string}.\n")
+    return 0
+
+##############################################################################################################################
+
+# Program 3. Substring End Search: Finds all dictionary words that end with your substring.
+
+def substring_end_search(input_string):
+    # counter for the number of words found
+    i = 0
+    
+    # matches provided string against each dictionary word, checking if "letters" is the end of "word".
+    for word in raw_words:
+        #the point in which we are checking the input_string
+        matchpoint = len(word) - len(input_string)
+        if  input_string == word[matchpoint:] and word[-2:] != "'s":
+            i+=1
+            print (f"{word}")
+    # returns final count and confirmation.
+    print(f"\n{i} words were found that end in {input_string}.\n")
+    return 0
+
+##############################################################################################################################
+
+# Program 4. Find all dictionary words that have the provided letters in the provided order.
+def letters_in_order(input_string):
+    return 0
+
+##############################################################################################################################
+
+# Program 5. Finds all dictionary words that have the provided letters, in any order.
+
+def letters_out_of_order(input_string):
+    return 0
+
+##############################################################################################################################
+
+# Program 6. Finds all dictionary words contained in the string you provided.
+
+def superstring(input_string):
+    return 0
+
+##############################################################################################################################
+
+# calls the selected function.
+if program_choice == 1:
+    substring_full_search(input_string)
+if program_choice == 2:
+    substring_start_search(input_string)
+if program_choice == 3:
+    substring_end_search(input_string)
+if program_choice == 4:
+    letters_in_order(input_string)
+if program_choice == 5:
+    letters_out_of_order(input_string)
+if program_choice == 6:
+    superstring(input_string)
