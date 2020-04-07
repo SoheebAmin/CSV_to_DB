@@ -15,8 +15,8 @@ while (True):
     1. Substring Full Search: Finds all dictionary words that have your substring in them.\n
     2. Substring Start Search: Finds all dictionary words that start with your substring. \n
     3. Substring End Search: Finds all dictionary words that end with your substring. \n
-    4. Letters in Order: Find all dictionary words that have the provided letters in the provided order. \n
-    5. Letters out of Order: Finds all dictionary words that have the provided letters, in any order. \n
+    4. Letters in Order: Find all dictionary words that have the letters in the provided order, regardless of if consecutive. \n
+    5. Letters Out of Order: Finds all dictionary words that have the provided letters, in any order. \n
     6. Super String: Finds all dictionary words contained in the string you provided. \n 
     """)
     print("Which Program would you like to run? Please enter the number: ", end = "")
@@ -97,14 +97,14 @@ def substring_end_search(input_string):
 
 ##############################################################################################################################
 
-# Program 4. Find all dictionary words that have the provided letters in the provided order.
+# Program 4. Find all dictionary words that have the letters in the provided order, regardless of if consecutive.
 def letters_in_order(input_string):
     # counter for the number of words found
     i = 0
     # checks to see if input letters exist in order in the dictionary words.
     for word in raw_words:
-        if all(x in word for x in input_string):
-            letters_index = [word.index(x) for x in input_string]
+        if all(letter in word for letter in input_string):
+            letters_index = [word.index(letter) for letter in input_string]
             if letters_index == sorted(letters_index):
                 print(f"{word}")
                 i+=1
@@ -120,11 +120,9 @@ def letters_in_order(input_string):
 def letters_out_of_order(input_string):
     # counter for the number of words found
     i = 0
-    input_letters = list(set(input_string))
     # breaks word down into letters, and return dictionary words that have all of the provided letters.
     for word in raw_words:
-        word_letters = list(set(word))
-        if  all(x in word_letters for x in input_letters):
+        if  all(x in word for x in input_string):
             print (f"{word}")
             i+=1
     # returns final count and confirmation.

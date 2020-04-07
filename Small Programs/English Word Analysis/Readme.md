@@ -5,8 +5,8 @@ This program gives a choice of different operations that can be performed agains
     1. Substring Full Search: Finds all dictionary words that have your substring in them.
     2. Substring Start Search: Finds all dictionary words that start with your substring. 
     3. Substring End Search: Finds all dictionary words that end with your substring. 
-    4. Letters in Order: Find all dictionary words that have the provided letters in the provided order. 
-    5. Letters out of Order: Finds all dictionary words that have the provided letters, in any order. 
+    4. Letters in Order: Find all dictionary words that have the letters in the provided order, regardless of if consecutive. 
+    5. Letters Out of Order: Finds all dictionary words that have the provided letters, in any order. 
     6. Super String: Finds all dictionary words contained in the string you provided.
 
 ## Some things to Note
