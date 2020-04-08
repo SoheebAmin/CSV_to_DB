@@ -61,7 +61,7 @@ for STR in str_list:
 def check_list(names_list, base_list):
     for person_base in names_list:
         i = 0
-        for items in base_list:
+        for _ in base_list:
             if int((person_base[i+1])) != base_list[i]:
                 break
             i += 1
