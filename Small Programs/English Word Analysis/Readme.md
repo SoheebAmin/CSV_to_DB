@@ -13,7 +13,7 @@ This program gives a choice of different operations that can be performed agains
 
 The program works with the provided dictionary in this directory. It can also work with any other list of words separated by newlines in a file. The file would just need to be placed in the "file open" function at the top of the program.
 
-All loops have a condition to remove possessives ("and != "'s") which can be removed.
+The initial word list creator has a condition to remove possessives, ("!= "'s") which can be removed.
 
 All the called functions can be taken out as their own programs to perform the string search operations, but they would also need a line of code to store each "word" in a list, and the return value would become that list.
 

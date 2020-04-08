@@ -1,11 +1,16 @@
 # Opens the dictionary. Insert your dictionary path here.
-dictionary = open(r"c:/MyCode/Small Programs/English Word Analysis/all_eng_word.txt", "r")
+dictionary = open(r"c:/MyCode/Small Programs/English Word Analysis/all_eng_word_not.txt", "r")
 
-# stips newlines and places only the words in a new list.
+# stips newlines and removes possessives, placing each word as an item in a list.
 raw_words = []
 for word in dictionary.readlines():
     word = word.strip()
-    raw_words.append(word)
+    if word[-2:] != "'s":
+        raw_words.append(word)
+
+# ensures there is list loaded from a dictionary
+if raw_words == []:
+    raise Exception("dictionary not provided, or did not load into list")
 
 
 # provides the list of possible choices of programs.
@@ -51,7 +56,7 @@ def substring_full_search(input_string):
     i = 0
     # matches provided string against each dictionary word, checking if "input_string" exists in "word".
     for word in raw_words:
-        if  input_string in word and word[-2:] != "'s":
+        if  input_string in word:
             print (f"{word}")
             i+=1
     # returns final count and confirmation.
@@ -88,7 +93,7 @@ def substring_end_search(input_string):
     for word in raw_words:
         #the point in which we are checking the input_string
         matchpoint = len(word) - len(input_string)
-        if  input_string == word[matchpoint:] and word[-2:] != "'s":
+        if  input_string == word[matchpoint:]:
             i+=1
             print (f"{word}")
     # returns final count and confirmation.
@@ -138,7 +143,7 @@ def superstring(input_string):
     i = 0
     # matches provided dictionary words against provided string, checking if "word" exists in "input_string".
     for word in raw_words:
-        if  word in input_string and word[-2:] != "'s" and word != input_string:
+        if  word in input_string and word[-2:] and word != input_string:
             print (f"{word}")
             i+=1
     # returns final count and confirmation.
