@@ -1,4 +1,4 @@
-# CS50 Assignment: Readability
+# CS50 Assignment: DNA
 
 This is one of the few assignments from Harvard's CS50 with no boilerplate code, and it is written from the ground up with my own approach.
 
@@ -23,10 +23,9 @@ Charlie,3,2,5
 
 ```txt
 
+GGGGGACGGTTTGTCTCACGCCTGTTGGT...
 
 ```
-
-GGGGGACGGTTTGTCTCACGCCTGTTGGT...
 
 The command line of the program would look as such:
 
