@@ -29,7 +29,7 @@ GGGGGACGGTTTGTCTCACGCCTGTTGGT...
 
 The command line of the program would look as such:
 
-```py
+```cmd
 
 
 $ python dna.py databases/large.csv sequences/5.txt
