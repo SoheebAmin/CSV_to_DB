@@ -20,6 +20,6 @@ reader = csv.reader(csvfile)
 #    if row[0]
 
 for row in reader:
-    db.execute("INSERT INTO students (house) VALUES(?)", row[1])
+    db.execute("INSERT INTO students(house) VALUES(?)", row[1])
 
 
