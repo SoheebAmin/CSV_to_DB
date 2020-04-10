@@ -12,14 +12,17 @@ if ".csv" not in sys.argv[1]:
 db = cs50.SQL("sqlite:///students.db")
 
 # open csv file and copy data
-csvfile = open(sys.argv[1], newline='')
+csvfile = open(sys.argv[1], newline="")
 reader = csv.reader(csvfile)
 
 # breaks name into first, middle, and last:
 # for row in reader:
 #    if row[0]
 
-for row in reader:
-    db.execute("INSERT INTO students(house) VALUES(?)", row[1])
+print(list(reader))
 
+
+for row in reader:
+    print(row[1])
+    #db.execute("INSERT INTO students (house) VALUES(?)", row[1])
 
