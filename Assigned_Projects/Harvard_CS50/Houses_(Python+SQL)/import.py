@@ -41,3 +41,6 @@ for row in reader[1:]:
 for row in reader[1:]:
     db.execute("INSERT INTO students (first, middle, last, house, birth) VALUES(?, ?, ?, ?, ?)", 
                 row[3], row[4], row[5], row[1], row[2])
+
+# closes CSV file.
+csvfile.close()
