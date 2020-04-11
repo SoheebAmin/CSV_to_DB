@@ -12,6 +12,8 @@ db = cs50.SQL("sqlite:///students_post_import.db")
 houses = db.execute(f"SELECT house FROM Students")
 house = sys.argv[1]
 
+
+
 # Ensures house exists in database by searching the dict_pairs returned by the db.execute function.
 found_house = False
 for dict_pair in houses:
