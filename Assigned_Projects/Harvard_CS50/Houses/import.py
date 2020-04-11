@@ -9,7 +9,7 @@ if ".csv" not in sys.argv[1]:
     sys.exit("You must load a CSV file")
 
 # opens students.db for SQLite.
-db = cs50.SQL("sqlite:///students.db")
+db = cs50.SQL("sqlite:///students_post_import.db")
 
 #open csv file and copy data
 csvfile = open(sys.argv[1], newline='')
@@ -40,4 +40,4 @@ for row in reader[1:]:
 # Uses CS50's db module to execute SQL that will insert the appropriate values into the table.
 for row in reader[1:]:
     db.execute("INSERT INTO students (first, middle, last, house, birth) VALUES(?, ?, ?, ?, ?)", 
-    row[3], row[4], row[5], row[1], row[2])
+                row[3], row[4], row[5], row[1], row[2])

@@ -34,13 +34,13 @@ The command line and output of the program would look as such:
 
 ```cmd
 
-python roster.py Gryffindor
+python roster.py Hufflepuff
 
-Hermione Jean Granger, born 1979
-Harry James Potter, born 1980
-Ginevra Molly Weasley, born 1981
-Ronald Bilius Weasley, born 1980
-...
+Hannah Abbott, born 1980
+Susan Bones, born 1979
+Cedric Diggory, born 1977
+Justin Finch-Fletchley, born 1979
+Ernest Macmillan, born 1980
 
 ```
 
