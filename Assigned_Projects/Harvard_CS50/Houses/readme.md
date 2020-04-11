@@ -30,11 +30,17 @@ python input.py characters.csv
 
 This demonstrates how the CS50 module can use Python to query a database. The program takes one input of the name of a house, and outputs the names of all the students in that house with their birth year, ordered by last name, then first name.
 
-The command line of the program would look as such:
+The command line and output of the program would look as such:
 
 ```cmd
 
-python roster.py Hufflepuff
+python roster.py Gryffindor
+
+Hermione Jean Granger, born 1979
+Harry James Potter, born 1980
+Ginevra Molly Weasley, born 1981
+Ronald Bilius Weasley, born 1980
+...
 
 ```
 
