@@ -1,6 +1,6 @@
-# CS50 Assignment
+# CSV to DB Converter with Python + SQL
 
-This is one of the few CS50 projects that provides no boilerplate code and was written from scratch by myself. It requires a CS50 specific module that allows SQL code to be executed by python, aptly named cs50. It can be pip installed with python -m pip cs50.
+This program uses CS50's pip library to convert CSV data into a DB using SQL inside of python, allowing python to manipulate and apply conditions to the dataset as it is carried it over. It also allows extracting data into python from DBs using SQL queries.
 
 There are two .py files which were created. Firstly, import.py takes the CSV data, breaks up the name to match the schema of the students relation, and then runs CS50's script which generates SQL code from python to populate the relation. Secondly, roster.py, which conducts an SQL query on the database and return a custom-formatted version of it.
 
@@ -46,6 +46,8 @@ Ernest Macmillan, born 1980
 
 I have provided the sample csv file that CS50 provides, and a students_pre_import.db file that only contains a students relation with its schema. Also present is the students_post_import.db file which was filled in by the code executed in import.py
 
-## Assignment Details
+## Pip Module and Assignment Details
+
+This is one of the few CS50 projects that provides no boilerplate code and was written from scratch by myself. It requires a CS50 specific module that allows SQL code to be executed by python, aptly named cs50. It can be pip installed with python -m pip cs50.
 
 The actual Houses assignment can be found [here](https://cs50.harvard.edu/x/2020/psets/7/houses "Houses Link").
