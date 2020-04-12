@@ -1,4 +1,4 @@
-# CS50 Assignment: Houses
+# CS50 Assignment
 
 This is one of the few CS50 projects that provides no boilerplate code and was written from scratch by myself. It requires a CS50 specific module that allows SQL code to be executed by python, aptly named cs50. It can be pip installed with python -m pip cs50.
 
