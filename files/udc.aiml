@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <!-- the ultimate default category -->
+  <category>
+    <pattern>*</pattern>
+    <template>Sorry, can you try rewording that?</template> 
+  </category>
+<category>
+    <pattern>Hi *</pattern>
+    <template>Hello!</template>
+</category>
+<category>
+    <pattern>Hey</pattern>
+    <template>Hey to you, too!</template>
+</category>
+<category>
+    <pattern>I have a question</pattern>
+    <template>I'm not programmed to handle open-ended questions. This AI isn't there just yet!</template>
+</category>
+<category>
+    <!-- a category just for testing anything and its ability to detect/respond. -->
+    <pattern>Test Phrase Here</pattern>
+    <template>Success</template>
+</category>
+</aiml>
